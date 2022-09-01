@@ -6,9 +6,7 @@ module.exports = {
     ],
     theme: {
         colors: {
-            "project_dec": "#6B6B6B",
-            "packageInfo": "#DFDFDF",
-            "wl_green": {
+            "blue-green": {
                 "100": "#ECFEFF",
                 "200": "#A8F9FD",
                 "300": "#3ED9DE",
