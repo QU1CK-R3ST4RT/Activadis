@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('location');
             $table->text('requirements');
             $table->float('cost')->nullable()->default(150.00);
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->integer('max_participants')->nullable()->default(10);
             $table->boolean('has_food')->nullable()->default(0);
             $table->text('image');
