@@ -17,7 +17,8 @@ class ReservationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "user_id" => \App\Models\User::factory()->create(),
+            "event_id" => \App\Models\Event::factory()->create()
         ];
     }
 }
