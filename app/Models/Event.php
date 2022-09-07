@@ -9,11 +9,11 @@ class Event extends Model
 {
     use HasFactory;
 
-    function user() {
-        return $this->hasOne(User::class);
+    public function user() {
+        return User::all()->find($this->user_id);
     }
 
-    function reservation() {
+    public function reservation() {
         return $this->hasMany(Reservation::class);
     }
 }

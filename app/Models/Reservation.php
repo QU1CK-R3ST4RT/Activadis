@@ -9,11 +9,11 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    function users() {
+    public function users() {
         return $this->hasOne(User::class);
     }
 
-    function events() {
+    public function events() {
         return $this->hasOne(Event::class);
     }
 }

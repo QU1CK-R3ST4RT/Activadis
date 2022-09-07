@@ -42,11 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function reservations() {
+    public function reservations() {
         return $this->belongsToMany(Reservation::class);
     }
 
-    function events() {
+    public function events() {
         return $this->belongsToMany(Event::class);
     }
 }
