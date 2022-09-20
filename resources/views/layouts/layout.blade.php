@@ -10,8 +10,8 @@
     @yield('scripts')
 </head>
 <body>
-    @include('components.header')
-    @yield('content')
-    @include('components.footer')
+@include('partials.header')
+@yield('content')
+@include('partials.footer')
 </body>
 </html>
