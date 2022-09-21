@@ -1,7 +1,7 @@
 <div class="p-10 m-10">
     <div class="w-full rounded-2xl shadow-md flex border border-gray-300">
 
-        <div class="rounded-l-2xl w-[20%] bg-amber-500 flex justify-center items-center float-left">
+        <div class="rounded-l-2xl w-[20%] bg-[{{ $color }}] flex justify-center items-center float-left">
             <div class="">
                 <h2 class="text-gray-900 text-xl md:text-2xl font-bold">{{$day}}</h2>
             </div>
