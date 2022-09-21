@@ -8,14 +8,21 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+
+    /**
+        * Deze functie geeft een overzicht van alle evenementen terug. 
+    */
     public function index() {
         $allEvents = Event::All();
 
-        return view('events', [
-            ['events'] => $allEvents
+        return view('events.index', [
+            'events' => Event::all()
         ]);
     }
 
+    /**
+        * Deze functie maakt een nieuw evenement aan. 
+    */
     public function store($params) {
         $newEvent = new Event();
 
