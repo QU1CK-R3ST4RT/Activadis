@@ -511,59 +511,32 @@ video {
 .float-right {
   float: right;
 }
+.ml-\[300px\] {
+  margin-left: 300px;
+}
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+.mt-\[15px\] {
+  margin-top: 15px;
+}
 .mr-\[32px\] {
   margin-right: 32px;
 }
 .ml-\[\] {
   margin-left: ;
 }
-.ml-\[143px\] {
-  margin-left: 143px;
-}
-.mt-\[\] {
-  margin-top: ;
-}
-.mt-\[160px\] {
-  margin-top: 160px;
-}
-.mt-\[150px\] {
-  margin-top: 150px;
-}
-.mt-\[100px\] {
-  margin-top: 100px;
-}
-.ml-\[300px\] {
-  margin-left: 300px;
-}
-.ml-\[600px\] {
-  margin-left: 600px;
-}
-.ml-\[400px\] {
-  margin-left: 400px;
-}
-.mt-\[10px\] {
-  margin-top: 10px;
-}
-.ml-\[10px\] {
-  margin-left: 10px;
-}
-.mt-\[15px\] {
-  margin-top: 15px;
-}
-.mt-\[20px\] {
-  margin-top: 20px;
-}
-.mt-\[px\] {
-  margin-top: px;
-}
-.mt-\[25px\] {
-  margin-top: 25px;
+.ml-\[15px\] {
+  margin-left: 15px;
 }
 .flex {
   display: flex;
 }
-.h-\[50px\] {
-  height: 50px;
+.h-\[650px\] {
+  height: 650px;
+}
+.h-\[60px\] {
+  height: 60px;
 }
 .h-\[70px\] {
   height: 70px;
@@ -577,44 +550,11 @@ video {
 .h-\[33px\] {
   height: 33px;
 }
-.h-px {
-  height: 1px;
+.w-\[575px\] {
+  width: 575px;
 }
-.h-\[\] {
-  height: ;
-}
-.h-\[\%\] {
-  height: %;
-}
-.h-\[50\%\] {
-  height: 50%;
-}
-.h-\[200px\] {
-  height: 200px;
-}
-.h-\[650px\] {
-  height: 650px;
-}
-.h-8 {
-  height: 2rem;
-}
-.h-40 {
-  height: 10rem;
-}
-.h-4\/5 {
-  height: 80%;
-}
-.h-96 {
-  height: 24rem;
-}
-.h-\[60px\] {
-  height: 60px;
-}
-.h-\[110px\] {
-  height: 110px;
-}
-.w-\[50px\] {
-  width: 50px;
+.w-\[540px\] {
+  width: 540px;
 }
 .w-screen {
   width: 100vw;
@@ -631,86 +571,14 @@ video {
 .w-\[33px\] {
   width: 33px;
 }
-.w-px {
-  width: 1px;
-}
-.w-\[\] {
-  width: ;
-}
-.w-\[50\] {
-  width: 50;
-}
-.w-\[30\%\] {
-  width: 30%;
-}
-.w-\[100px\] {
-  width: 100px;
-}
-.w-\[540px\] {
-  width: 540px;
-}
-.w-5 {
-  width: 1.25rem;
-}
-.w-32 {
-  width: 8rem;
-}
-.w-80 {
-  width: 20rem;
-}
-.w-1\/2 {
-  width: 50%;
-}
-.w-\[50\%\] {
-  width: 50%;
-}
-.w-\[440px\] {
-  width: 440px;
-}
-.w-\[200px\] {
-  width: 200px;
-}
-.w-\[240px\] {
-  width: 240px;
-}
-.w-\[545px\] {
-  width: 545px;
-}
-.w-\[550px\] {
-  width: 550px;
-}
-.w-\[600px\] {
-  width: 600px;
-}
-.w-\[700px\] {
-  width: 700px;
-}
-.w-\[1200px\] {
-  width: 1200px;
-}
-.w-\[640px\] {
-  width: 640px;
-}
-.w-\[570px\] {
-  width: 570px;
-}
-.w-\[590px\] {
-  width: 590px;
-}
-.w-\[585px\] {
-  width: 585px;
-}
-.w-\[580px\] {
-  width: 580px;
-}
-.w-\[575px\] {
-  width: 575px;
-}
-.w-\[560px\] {
-  width: 560px;
+.w-full {
+  width: 100%;
 }
 .max-w-\[80\%\] {
   max-width: 80%;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
@@ -721,9 +589,6 @@ video {
 .flex-wrap {
   flex-wrap: wrap;
 }
-.place-content-center {
-  place-content: center;
-}
 .items-center {
   align-items: center;
 }
@@ -733,21 +598,9 @@ video {
 .overflow-y-scroll {
   overflow-y: scroll;
 }
-.rounded {
-  border-radius: 0.25rem;
-}
-.rounded-\[\] {
-  border-radius: ;
-}
-.rounded-\[15\] {
-  border-radius: 15;
-}
-.rounded-\[15px\] {
-  border-radius: 15px;
-}
-.bg-black {
+.bg-green-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 .bg-\[\#04173E\] {
   --tw-bg-opacity: 1;
@@ -756,22 +609,6 @@ video {
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-}
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-.bg-yellow-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 .pl-6 {
   padding-left: 1.5rem;
@@ -782,11 +619,8 @@ video {
 .pt-\[5px\] {
   padding-top: 5px;
 }
-.text-\[15px\] {
-  font-size: 15px;
-}
-.font-bold {
-  font-weight: 700;
+.align-middle {
+  vertical-align: middle;
 }
 @media (min-width: 640px) {
 
