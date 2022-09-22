@@ -11,7 +11,11 @@
 </head>
 <body>
 @include('partials.header')
-@yield('content')
+<div class="flex justify-center justify-center h-full">
+    <div class="max-w-full h-full mx-5 md:mx-0">
+        @yield('content')
+    </div>
+</div>
 @include('partials.footer')
 </body>
 </html>

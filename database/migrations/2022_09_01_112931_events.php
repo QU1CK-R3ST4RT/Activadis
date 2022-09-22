@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('location');
             $table->text('description');
             $table->text('necessities');
+            $table->text('color')->default("#FFFFFF");
             $table->float('cost')->nullable()->default(150.00);
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
