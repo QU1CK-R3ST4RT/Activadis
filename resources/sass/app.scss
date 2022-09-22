@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+@tailwind screens;
+
+/*
+    import components here
+    using: @import "components/<name>"
+*/
+$border-color: #AAAAAA;
+
+@import "components/global";
+@import "components/colors";
+
+/*
+    custom scss
+*/
+
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+
+.mainContainer {
+    box-shadow: 0px 4px 10px rgba($color: #000000, $alpha: 0.2);
+
+    max-width: 440px;
+    width: 100%;
+    margin-top: 60px;
+    
+    border: 1px solid $border-color;
+    border-radius: 5px;
+};
+
+.tableList {
+    padding: 20px;
+};
+
+.cardBanner {
+    width: 100%;
+    height: 80px;
+    background-color: rebeccapurple;
+    border-radius: 4px 4px 0px 0px
+};
+
+input {
+    padding: 4px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+};
+
+textarea {
+    width: 390px;
+    max-width: 700px;
+    height: 100px;
+    max-height: 300px;
+
+    padding: 2px;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+};
+
+td {
+    padding: 4px;
+}

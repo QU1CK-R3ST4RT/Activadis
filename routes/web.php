@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/login', function() {
-    return view('login');
-})->middleware('login');
-
-Route::get('/logout', function () {
-    // return view('logout');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::get("/events/", [EventController::class, 'index']);
