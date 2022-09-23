@@ -73,10 +73,10 @@ class EventController extends Controller
     }
 
     public function getEventsWithUser($userID) {
-        $foundEvent = Event::all()->where('user_id', $userID);
+        return Event::all()->where('user_id', $userID);
     }
     
     public function getReservations($eventID) {
-        $foundReservations = Reservation::all()->where('event_id', $eventID);
+        return Reservation::all()->where('event_id', $eventID);
     }
 }
