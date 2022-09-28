@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -71,7 +72,11 @@ class EventController extends Controller
         $foundEvent->save();
     }
 
-    // public function getEventsWithUser() {
-
-    // }
+    public function getEventsWithUser($userID) {
+        return Event::all()->where('user_id', $userID);
+    }
+    
+    public function getReservations($eventID) {
+        return Reservation::all()->where('event_id', $eventID);
+    }
 }
