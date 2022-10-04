@@ -19,3 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get("/events/", [EventController::class, 'index']);
+
+Route::get('/login', function () {
+    return view('login-modal');
+});
+
+Route::get('/event', function () {
+    return view('event-modal');
+});
