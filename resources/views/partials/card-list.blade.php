@@ -1,6 +1,22 @@
 @extends('layouts.layout')
 
+@section('scripts')
+    <script>
+        function showMenu(e) {
+            let el = document.getElementById(`CardX${e}`)
 
+            el.classList.add("block")
+            el.classList.remove("hidden")
+        }
+
+        function hideMenu(e) {
+            let el = document.getElementById(`CardX${e}`)
+
+            el.classList.add("hidden")
+            el.classList.remove("block")
+        }
+    </script>
+@endsection
 
 @section('content')
     <div class="grid grid-cols-2 mt-10">
@@ -26,6 +42,10 @@
 
                         @slot('time')
                             {{ $e->start_time }}
+                        @endslot
+
+                        @slot('id')
+                            {{ $e->id}}
                         @endslot
                     @endcomponent
                 @endforeach
