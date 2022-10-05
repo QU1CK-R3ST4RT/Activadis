@@ -21,6 +21,10 @@ class EventController extends Controller
         ]);
     }
 
+    public function event() {
+        return view('event-modal');
+    }
+
     /**
         * Deze functie maakt een nieuw evenement aan. 
     */
@@ -70,6 +74,20 @@ class EventController extends Controller
         $foundEvent->max_people = $params['max_people'] or $foundEvent['max_people'];
 
         $foundEvent->save();
+    }
+
+    public function editing($eventID) {
+        $foundEvent = Event::all()->find($eventID);
+        $foundEvent = isset($foundEvent);
+
+        // Bekijk of de order bestaat, zo wel, laat dan alle data zien.
+        if($foundEvent) {
+            return view('event.editing', [
+                'event' => $foundEvent
+            ]);
+        } else {
+            abort(404);
+        }
     }
 
     public function getEventsWithUser($userID) {

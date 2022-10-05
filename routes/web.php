@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('partials.card-list');
-});
-
+Route::get('/', function () { return view('welcome'); });
 Route::get("/events/", [EventController::class, 'index']);
+Route::get("/event/{event}", [EventController::class, 'event']);
 
-Route::get('/login', function () {
-    return view('login-modal');
-});
+Route::get("/event/{event}/edit", [EventController::class, 'editing']);
+Route::post("/event/{event}/edit", [EventController::class, 'edit']);
 
-Route::get('/event', function () {
-    return view('event-modal');
-});
+Route::get("/login/", [UserController::class, 'index']);
+Route::get("/logout/", [UserController::class, 'logout']);

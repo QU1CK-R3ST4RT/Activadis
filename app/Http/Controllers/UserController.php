@@ -8,13 +8,13 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-class AuthController extends Controller {
+class UserController extends Controller {
     /**
         * Deze functie geeft de login-pagina op voor de gebruiker.
         * @return View - Een view met de login pagina.
     */
     public function index(): View {
-        return view('auth.login');
+        return view('login-modal');
     }
 
     /**
