@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+
 
 @section('scripts')
     <script>
