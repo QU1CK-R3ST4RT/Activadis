@@ -12,11 +12,20 @@
             <div class="text-gray-700 text-sm md:text-md"><span class="font-bold">{{$date}}</span> | {{$time}}</div>
         </div>
 
-        <div class="float-right">
+        <div class="float-right" onmouseover="showMenu({{ $id }})" onmouseleave="hideMenu({{ $id }})">
             <a href="#">
                 <span class="h-full flex justify-end items-center py-3 px-5">
                     <img class="h-9" src="images/options.svg" alt="">
                 </span>
+                <ul class="z-10 shadow-lg border border-gray-500 mt-[-2rem] hidden" id="CardX{{ $id }}">
+                    <a href="events/edit/{{ $id }}">
+                        <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Bewerk</li>
+                    </a>
+
+                    <a href="events/delete/{{ $id }}">
+                        <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Verwijder</li>
+                    </a>
+                </ul>
             </a>
         </div>
 
