@@ -1,6 +1,10 @@
+@php
+    use \App\Models\Event as Event
+@endphp
+
 <div class="overflow-y-scroll h-[650px]">
     <div class="w-full">
-        @foreach (\App\Models\Event::all() as $e)
+        @foreach (Event::all() as $e)
             @component('components.single-activity')
                 @slot('color')
                     {{ $e->color }}
