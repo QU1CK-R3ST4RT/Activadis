@@ -18,11 +18,11 @@
                     <img class="h-9" src="images/options.svg" alt="">
                 </span>
                 <ul class="z-10 shadow-lg border border-gray-500 mt-[-2rem] hidden" id="CardX{{ $id }}">
-                    <a href="events/edit/{{ $id }}">
+                    <a href="events/{{ $id }}/edit">
                         <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Bewerk</li>
                     </a>
 
-                    <a href="events/delete/{{ $id }}">
+                    <a href="events/{{ $id }}/delete">
                         <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Verwijder</li>
                     </a>
                 </ul>
