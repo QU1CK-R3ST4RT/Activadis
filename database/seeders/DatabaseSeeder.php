@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Reservation::factory(15)->create();
         \App\Models\User::factory(15)->create();
         \App\Models\User::factory()->create(['name' => 'admin', 'role_id' => 2, 'email' => 'admin@123.com', 'password' => Hash::make('admin123!')]);
+        \App\Models\User::factory()->create(['name' => 'henk', 'role_id' => 1, 'email' => 'henk@123.com', 'password' => Hash::make('hallo')]);
+
     }
 }
