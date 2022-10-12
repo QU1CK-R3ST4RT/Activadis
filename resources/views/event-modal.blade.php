@@ -8,6 +8,7 @@
             <form action="" method="POST">
                 @csrf
                 <table>
+                    <input type="text" class="hidden" value="{{$event->id}}" name="id">
                     <tr>
                         <td>
                             <input type="text" placeholder="Event name" name="name" class="textfields" value="{{$event->name ?? ""}}">

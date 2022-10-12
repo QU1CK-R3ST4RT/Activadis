@@ -59,23 +59,26 @@ class EventController extends Controller
     }
 
     public function edit() {
+//        $userId = Auth::user()['id'];
         $foundEvent = Event::all()->where('id', request('id'))->first();
 
-        $foundEvent->user_id = Auth::user()->id;
-        $foundEvent->name = request('name') or $foundEvent['name'];
-        $foundEvent->location = request('location') or $foundEvent['location'];
-        $foundEvent->description = request('description') or $foundEvent['description'];
-        $foundEvent->necessities = request('necessities') or $foundEvent['necessities'];
-        $foundEvent->cost = request('cost') or $foundEvent['cost'];
-        $foundEvent->start_time = request('start_time') or $foundEvent['start_time'];
-        $foundEvent->end_time = request('end_time') or $foundEvent['end_time'];
-        $foundEvent->max_participants = request('max_participants') or $foundEvent['max_participants'];
-        $foundEvent->has_food = request('has_food') or $foundEvent['has_food'];
-        $foundEvent->image = request('image') or $foundEvent['image'];
-        $foundEvent->min_people = request('min_people') or $foundEvent['min_people'];
-        $foundEvent->max_people = request('max_people') or $foundEvent['max_people'];
+        $foundEvent->user_id = Auth::user()['id'];
+        $foundEvent->name = request('name') ?: $foundEvent['name'];
+        $foundEvent->color = request('color') ?: $foundEvent['color'];
+        $foundEvent->location = request('location') ?: $foundEvent['location'];
+        $foundEvent->description = request('description') ?: $foundEvent['description'];
+        $foundEvent->necessities = request('necessities') ?: $foundEvent['necessities'];
+        $foundEvent->cost = request('cost') ?: $foundEvent['cost'];
+        $foundEvent->start_time = request('start_time') ?: $foundEvent['start_time'];
+        $foundEvent->end_time = request('end_time') ?: $foundEvent['end_time'];
+        $foundEvent->max_participants = request('max_participants') ?: $foundEvent['max_participants'];
+        $foundEvent->has_food = request('has_food') ?: $foundEvent['has_food'];
+        $foundEvent->image = request('image') ?: $foundEvent['image'];
+        $foundEvent->min_people = request('min_people') ?: $foundEvent['min_people'];
+        $foundEvent->max_people = request('max_people') ?: $foundEvent['max_people'];
 
         $foundEvent->save();
+        return redirect('/');
     }
 
     public function editing($eventID) {
