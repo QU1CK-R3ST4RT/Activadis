@@ -30,7 +30,7 @@ class UserController extends Controller {
         * @return RedirectResponse - Een redirect terug naar de login pagina.
     */
     public function register(): RedirectResponse {
-        
+
         // Bekijk eerst of er geen gebruiker bestaat met deze email:
         $userExists = count( User::all()->where('email', request("email"))) != 0;
 
@@ -52,10 +52,9 @@ class UserController extends Controller {
         * Deze functie probeert een gebruiker in te loggen.
         * @return RedirectResponse - Een redirect terug naar de login pagina, als alles gelukt is.
     */
-    public function login(): RedirectResponse {
+    public function login() {
         $email = request('email');
         $plainPassword = request('password');
-
         $user = User::all()->where('email', $email)->first();
         $userExits = isset($user);
 
@@ -68,11 +67,11 @@ class UserController extends Controller {
             // De login gegevens goed ingevult heeft.
             if($passwordMatches) {
                 Auth::login($user, true);
-                return redirect('login')->with(['login_success' => 'Welkom terug!']);
+                return redirect('/')->with(['login_success' => 'Welkom terug!']);
             }
         }
 
-        return redirect('login')->with(['error' => 'Aanmelden mislukt.']);
+//        return redirect('/login')->with(['error' => 'Aanmelden mislukt.']);
     }
 
     /**

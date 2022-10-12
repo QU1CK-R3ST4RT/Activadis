@@ -21,11 +21,12 @@ class EventFactory extends Factory
 
         return [
             'user_id' => User::factory()->create(),
+            'color' => fake()->hexColor(),
             'name' => fake()->name(),
             'description' => fake()->paragraph(),
             'necessities' => fake()->word(),
             'location' => fake()->city(),
-            'cost' => fake()->numberBetween(100, 5000), 
+            'cost' => fake()->numberBetween(100, 5000),
             'has_food' => false,
             'image' => "",
             "start_time" => fake()->dateTime(),

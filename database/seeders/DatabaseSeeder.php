@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use Database\Factories\RoleFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Event::factory(15)->create();
         \App\Models\Reservation::factory(15)->create();
         \App\Models\User::factory(15)->create();
+        \App\Models\User::factory()->create(['name' => 'admin', 'role_id' => 2, 'email' => 'admin@123.com', 'password' => Hash::make('admin123!')]);
     }
 }

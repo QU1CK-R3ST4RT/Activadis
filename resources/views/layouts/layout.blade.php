@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,17 +11,29 @@
     @yield('scripts')
     <script>
         function showMenu(e) {
-            let el = document.getElementById(`CardX${e}`)
+            let el;
 
-            el.classList.add("block")
-            el.classList.remove("hidden")
+            if (e === 'UserMenu') {
+                el = document.getElementById(e);
+            } else {
+                el = document.getElementById(`CardX${e}`);
+            };
+
+            el.classList.add("block");
+            el.classList.remove("hidden");
         }
 
         function hideMenu(e) {
-            let el = document.getElementById(`CardX${e}`)
+            let el;
 
-            el.classList.add("hidden")
-            el.classList.remove("block")
+            if (e === 'UserMenu') {
+                el = document.getElementById(e);
+            } else {
+                el = document.getElementById(`CardX${e}`);
+            };
+
+            el.classList.add("hidden");
+            el.classList.remove("block");
         }
     </script>
 </head>
@@ -33,8 +44,8 @@
     <div class="flex justify-center justify-center h-full">
         <div class="max-w-full h-full mx-5 md:mx-0">
             <div class="grid grid-cols-2 mt-10">
-                @yield('content')
                 @include('partials.card-list')
+                @yield('content')
             </div>
         </div>
     </div>
