@@ -32,9 +32,12 @@
 
     <div class="flex justify-center justify-center h-full">
         <div class="max-w-full h-full mx-5 md:mx-0">
-            <div class="grid grid-cols-2 mt-10">
+            <div class="grid grid-cols-1 mt-10 md:grid-cols-2">
                 @yield('content')
-                @include('partials.card-list')
+                <div>
+                    @include('partials.card-list')
+                    @include('partials.pagination')
+                </div>
             </div>
         </div>
     </div>

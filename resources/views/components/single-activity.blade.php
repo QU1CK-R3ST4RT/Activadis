@@ -1,4 +1,4 @@
-<div class="m-10">
+<div class="mr-10 ml-10 mb-5">
     <div class="w-full rounded-2xl shadow-md flex border border-gray-300">
 
         <div style="background-color: {{ $color }};" class="rounded-l-2xl w-[20%] flex justify-center items-center float-left">
