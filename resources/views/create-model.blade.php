@@ -1,51 +1,51 @@
-@extends('layouts.layout')
+@extends('layouts.page-layout')
 
 @section('content')
 <div class="outer-container mx-5">
     <div class="main-container">
-        <div class="card-banner" style="background: {{ $event->color ?? "" }} !important;"></div>
+        <div class="card-banner" style="background: #04173E;"></div>
         <div class="table-list">
             <form action="" method="POST">
                 @csrf
                 <table>
-                    <input type="text" class="hidden" value="{{$event->id}}" name="id">
+                    <input type="text" class="hidden" name="id">
                     <tr>
                         <td>
-                            <input type="text" placeholder="Event name" name="name" class="textfields" value="{{$event->name ?? ""}}">
+                            <input type="text" placeholder="Event name" name="name" class="textfields">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Location" name="location" class="textfields" value="{{$event->location ?? ""}}">
+                            <input type="text" placeholder="Location" name="location" class="textfields" >
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="beginTime">Starting at</label>
-                            <input type="datetime-local" name="start_time" class="textfields" value="{{$event->start_time}}">
+                            <input type="datetime-local" name="start_time" class="textfields">
                         </td>
                     </tr> 
                     <tr>
                         <td>
                             <label for="endTime">Ending at</label>
-                            <input type="datetime-local" name="end_time" class="textfields" value="{{$event->end_time}}">
+                            <input type="datetime-local" name="end_time" class="textfields">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <textarea type="text" placeholder="Description" name="description" class="description-textfield">{{$event->description ?? ""}}</textarea>
+                            <textarea type="text" placeholder="Description" name="description" class="description-textfield"></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="checkbox" name="food_included" placeholder="0" class="textfields" value="{{$event->food_included ?? false}}">
+                            <input type="checkbox" checked="true" name="food_included" placeholder="0" class="textfields">
                             <label for="foodIncluded">Food Included</label>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>Prijs</p>
-                            <input type="number" min="0" placeholder="Pricing" name="price" class="textfields" value="{{$event->cost ?? ""}}">
+                            <input type="number" min="0" placeholder="Pricing" name="price" class="textfields">
                         </td>
                     </tr>
                     <tr>
@@ -60,7 +60,7 @@
                     <tr>
                         <td>
                             <label for="colorPicker">Card color</label>
-                            <input type="color" name="color" class="textfields" value="{{$event->color ?? ""}}">
+                            <input type="color" name="color" class="textfields">
                         </td>
                     </tr>
                     <tr>

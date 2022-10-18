@@ -11,6 +11,9 @@ Route::group(['middleware' => 'LoggedIn'],function () {
     Route::get("/events", [EventController::class, 'index']);
     Route::get("/event/{event}", [EventController::class, 'event']);
 
+    Route::get('/create', function () { return view('create-model'); });
+    Route::post("/create", [EventController::class, 'store']);
+
     Route::get("/events/{event}/edit", [EventController::class, 'editing']);
     Route::post("/events/{event}/edit", [EventController::class, 'edit']);
 
