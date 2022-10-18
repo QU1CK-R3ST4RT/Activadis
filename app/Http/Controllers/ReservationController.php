@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
+
+    /**
+        * This function adds a new reservation to the event system:
+        * @param int $event_id - The ID that needs to be associated with the reservation
+        * @return Redirect - Once finished with the process.
+        * @author Rick Arendsen
+    */
     public function store($event_id) {
         # First, check if the event that we are trying to make a reservation for
         # Actually exists in the current context:

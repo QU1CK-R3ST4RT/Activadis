@@ -11,7 +11,9 @@ class EventController extends Controller
 {
 
     /**
-        * Deze functie geeft een overzicht van alle evenementen terug.
+        * This function returns a view with all the events within the system.
+        * @return View - A view passed alongside a collection of the events.
+        * @see \Illuminate\Database\Eloquent\Collection
     */
     public function index() {
         $allEvents = Event::All();
@@ -21,14 +23,20 @@ class EventController extends Controller
         ]);
     }
 
+    /**
+        * This function return the event modal alongside the wildcard of the event.
+        * @see Event
+    */
     public function event() {
         return view('event-modal');
     }
 
     /**
-        * Deze functie maakt een nieuw evenement aan.
+        * This function adds a new event to the database,
+        * @see Event
+        * @implnote - The request is used as a wildcard used in @link routes/web.php
     */
-    public function store($params) {
+    public function store() {
         $newEvent = new Event();
 
         $newEvent->user_id = request('user_id') or Auth::user()->id;
@@ -48,6 +56,11 @@ class EventController extends Controller
         $newEvent->save();
     }
 
+    /**
+        * This function deletes an event from the database.
+        * @see Event
+        * @implnote - The $id parameter is supplied in the route itself.
+    */
     public function delete($id) {
        $event = Event::all()->where('id', $id)->first();
 
@@ -58,8 +71,13 @@ class EventController extends Controller
         return redirect('/');
     }
 
+    /**
+        * This function edits an existing event that is inside of the database.
+        * @see Event
+        * @return Redirect - When editing has been completed.
+        * @implnote - The request is used as a wildcard used in @link routes/web.php
+    */
     public function edit() {
-//        $userId = Auth::user()['id'];
         $foundEvent = Event::all()->where('id', request('id'))->first();
 
         $foundEvent->user_id = Auth::user()['id'];
@@ -81,6 +99,11 @@ class EventController extends Controller
         return redirect('/');
     }
 
+    /**
+        * This function returns the editing modal alongside the data that is required.
+        * @return View - A view alongside the required information.
+        * @throws \Symfony\Component\HttpKernel\Exception\HttpException - If the event does not exist.
+    */
     public function editing($eventID) {
         $foundEvent = Event::all()->find($eventID);
         $Event = isset($foundEvent);
@@ -95,10 +118,18 @@ class EventController extends Controller
         }
     }
 
+    /**
+        * This function returns all the events associated with a specific user.
+        * @return Collection - A collection with all the events. 
+    */
     public function getEventsWithUser($userID) {
         return Event::all()->where('user_id', $userID);
     }
 
+    /**
+        * This function returns all the reservation associated with an event.
+        * @return Collection - A collection with all the reservations. 
+    */
     public function getReservations($eventID) {
         return Reservation::all()->where('event_id', $eventID);
     }
