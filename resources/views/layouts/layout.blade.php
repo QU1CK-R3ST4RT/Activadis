@@ -10,30 +10,28 @@
 
     @yield('scripts')
     <script>
-        function showMenu(e) {
+        function toggleMenu(e) {
             let el;
 
             if (e === 'UserMenu') {
                 el = document.getElementById(e);
+                if (el.classList.contains('hidden')) {
+                    el.classList.add("block");
+                    el.classList.remove("hidden");
+                } else {
+                    el.classList.add("hidden");
+                    el.classList.remove("block");
+                }
             } else {
                 el = document.getElementById(`CardX${e}`);
+                if (el.classList.contains('hidden')) {
+                    el.classList.add("block");
+                    el.classList.remove("hidden");
+                } else {
+                    el.classList.add("hidden");
+                    el.classList.remove("block");
+                }
             };
-
-            el.classList.add("block");
-            el.classList.remove("hidden");
-        }
-
-        function hideMenu(e) {
-            let el;
-
-            if (e === 'UserMenu') {
-                el = document.getElementById(e);
-            } else {
-                el = document.getElementById(`CardX${e}`);
-            };
-
-            el.classList.add("hidden");
-            el.classList.remove("block");
         }
     </script>
 </head>
@@ -44,11 +42,11 @@
     <div class="flex justify-center justify-center h-full">
         <div class="max-w-full h-full mx-5 md:mx-0">
             <div class="grid grid-cols-1 mt-10 md:grid-cols-2">
-                @yield('content')
                 <div>
                     @include('partials.card-list')
                     @include('partials.pagination')
                 </div>
+                @yield('content')
             </div>
         </div>
     </div>
