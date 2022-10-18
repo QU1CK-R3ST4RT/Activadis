@@ -15,13 +15,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => 'LoggedIn'],function () {
+    Route::get('/', function () { return view('welcome'); });
+    Route::get("/events", [EventController::class, 'index']);
+    Route::get("/event/{event}", [EventController::class, 'event']);
 
-Route::get('/', function () { return view('welcome'); });
-Route::get("/events/", [EventController::class, 'index']);
-Route::get("/event/{event}", [EventController::class, 'event']);
+    Route::get("/events/{event}/edit", [EventController::class, 'editing']);
+    Route::post("/events/{event}/edit", [EventController::class, 'edit']);
 
-Route::get("/event/{event}/edit", [EventController::class, 'editing']);
-Route::post("/event/{event}/edit", [EventController::class, 'edit']);
+    Route::get("/events/{event}/delete", [EventController::class, 'delete']);
+});
 
-Route::get("/login/", [UserController::class, 'index']);
-Route::get("/logout/", [UserController::class, 'logout']);
+Route::get("/logout", [UserController::class, 'logout']);
+Route::get("/login", [UserController::class, 'index']);
+Route::post("/login", [UserController::class, 'login']);
