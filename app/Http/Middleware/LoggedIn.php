@@ -9,7 +9,7 @@ class LoggedIn
 {
     public function handle($request, $next)
     {
-        if (! Auth::user()) {
+        if (!Auth::user()) {
             return redirect('/login');
         } else {
             return $next($request);

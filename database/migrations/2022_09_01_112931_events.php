@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("user_id");
-            $table->text('name')->unique();
+            $table->text('name');
             $table->text('location');
             $table->text('description');
             $table->text('necessities');
-            $table->text('color')->default("#FFFFFF");
+            $table->text('color')->nullable();
             $table->float('cost')->nullable()->default(150.00);
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
