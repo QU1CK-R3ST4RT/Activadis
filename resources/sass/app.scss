@@ -7,6 +7,7 @@
     import components here
     using: @import "components/<name>"
 */
+
 $border-color: #AAAAAA;
 $button-color: #006EE6;
 $login-color: #04173e;
@@ -140,4 +141,32 @@ input[type="checkbox"] {
 
 a {
     color: #006EE6;
+}
+
+.pagination-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-pagination {
+    background-color: #006EE6;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 100px;
+    width: 100%;
+}
+
+.btn-pagination {
+    background-color: #006EE6;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    max-width: 100px;
+    width: 100%;
+}
+
+.btn-pagination:hover {
+    background-color: #007bff;
 }
