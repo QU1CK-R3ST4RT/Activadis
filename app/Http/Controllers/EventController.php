@@ -7,6 +7,8 @@ use App\Models\Event;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\once;
+
 class EventController extends Controller
 {
 
@@ -28,24 +30,34 @@ class EventController extends Controller
     /**
         * Deze functie maakt een nieuw evenement aan.
     */
-    public function store($params) {
+    public function store() {
         $newEvent = new Event();
 
-        $newEvent->user_id = request('user_id') or Auth::user()->id;
+        $newEvent->user_id = Auth::user()->id;
         $newEvent->name = request('name') or "Name not assigned";
         $newEvent->location = request('location');
-        $newEvent->description = request('description');
-        $newEvent->necessities = request('necessities');
-        $newEvent->cost = request('cost') or 0;
         $newEvent->start_time = request('start_time');
         $newEvent->end_time = request('end_time');
-        $newEvent->max_participants = request('max_participants');
-        $newEvent->has_food = request('has_food') or false;
-        $newEvent->image = request('image') or "";
-        $newEvent->min_people = request('min_people');
-        $newEvent->max_people = request('max_people');
+        $newEvent->description = request('description');
+
+        if(request('food_included') == "on") {
+            $newEvent->has_food = '1';
+        }
+        else {
+            $newEvent->has_food = '0';
+         }
+
+         $newEvent->cost = request('price');
+         $newEvent->max_participants = request('maxParticipants');
+         $newEvent->min_people = request('minParticipant');
+         $newEvent->max_people = request('maxParticipants');
+        $newEvent->color = request('color');
+        $newEvent->necessities = request('description');
+        $newEvent->image = '1';
 
         $newEvent->save();
+
+        return redirect('/');
     }
 
     public function delete($id) {
