@@ -104,11 +104,11 @@ class EventController extends Controller
         $foundEvent->max_participants = request('max_participants') ?: $foundEvent['max_participants'];
         $foundEvent->has_food = request('has_food') ?: $foundEvent['has_food'];
         $foundEvent->image = request('image') ?: $foundEvent['image'];
-        $foundEvent->min_people = request('min_people') ?: $foundEvent['min_people'];
-        $foundEvent->max_people = request('max_people') ?: $foundEvent['max_people'];
+        $foundEvent->min_people = request('minParticipant') ?: $foundEvent['min_people'];
+        $foundEvent->max_people = request('maxParticipants') ?: $foundEvent['max_people'];
 
         $foundEvent->save();
-        return redirect('/');
+        return redirect('/events/'.request('id').'/edit');
     }
 
     /**
@@ -130,9 +130,17 @@ class EventController extends Controller
         }
     }
 
+    public function details($id) {
+        $foundEvent = Event::all()->where('id', $id)->first();
+
+        return view('event-details',[
+            'event' => $foundEvent,
+        ]);
+    }
+
     /**
         * This function returns all the events associated with a specific user.
-        * @return Collection - A collection with all the events. 
+        * @return Collection - A collection with all the events.
     */
     public function getEventsWithUser($userID) {
         return Event::all()->where('user_id', $userID);
@@ -140,7 +148,7 @@ class EventController extends Controller
 
     /**
         * This function returns all the reservation associated with an event.
-        * @return Collection - A collection with all the reservations. 
+        * @return Collection - A collection with all the reservations.
     */
     public function getReservations($eventID) {
         return Reservation::all()->where('event_id', $eventID);

@@ -37,7 +37,7 @@ class ReservationController extends Controller
             # Check if a reservation already exists:
             $reservationExists = empty($foundReservation) == false;
             if($reservationExists) {
-                return redirect("/");
+                return redirect("/events/".$event_id."/details");
             }
 
             # Start adding a new reservation:
@@ -47,7 +47,7 @@ class ReservationController extends Controller
 
             # Save the new reservation after having assigned the attributes:
             $newReservation->save();
-            return redirect("/")->with([
+            return redirect("/events/".$event_id."/details")->with([
                 'message' => "Successfully joined event."
             ]);
         } else {
@@ -57,5 +57,14 @@ class ReservationController extends Controller
                 return redirect("/");
             }
         }
+    }
+
+    public function delete($event_id) {
+        $foundReservation = Reservation::all()->where("event_id", $event_id)->where('user_id', Auth::user()->id)->first();
+
+        $foundReservation->delete();
+        return redirect("/events/".$event_id."/details")->with([
+            'message' => "succesvol verwijderd"
+        ]);
     }
 }
