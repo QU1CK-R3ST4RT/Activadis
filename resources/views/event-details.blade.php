@@ -68,6 +68,10 @@
                             <a href="/events/{{ $event->id }}/leave">
                                 <button type="" class="btn-custom">Afmelden</button>
                             </a>
+                        @elseif(\App\Models\Reservation::all()->where('event_id',$event->id)->count() == $event->max_people)
+                            <a href="#" class="my-2">
+                                <button type="" disabled class="btn-custom-disabled">Vol</button>
+                            </a>
                         @else
                             <a href="/events/{{ $event->id }}/join">
                                 <button type="" class="btn-custom">Inschrijven</button>
