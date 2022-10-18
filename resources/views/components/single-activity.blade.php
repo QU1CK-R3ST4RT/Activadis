@@ -12,22 +12,26 @@
             <div class="text-gray-700 text-sm md:text-md"><span class="font-bold">{{$date}}</span> | {{$time}}</div>
         </div>
 
-        <div class="float-right" onmouseover="showMenu({{ $id }})" onmouseleave="hideMenu({{ $id }})">
+        <div class="float-right" onmouseover="showMenu({{ $id }})">
             <a href="#">
                 <span class="h-full flex justify-end items-center py-3 px-5">
-                    <img class="h-9" src="images/options.svg" alt="">
+                    <img class="h-9" src="{{asset('images/options.svg')}}" alt="">
                 </span>
-                <ul class="z-10 shadow-lg border border-gray-500 mt-[-2rem] hidden" id="CardX{{ $id }}">
-                    <a href="events/{{ $id }}/edit">
-                        <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Bewerk</li>
-                    </a>
-
-                    <a href="events/{{ $id }}/delete">
-                        <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Verwijder</li>
-                    </a>
-                </ul>
             </a>
         </div>
-
     </div>
+    <ul class="z-10 shadow-lg border border-gray-500 mt-[-2rem] hidden mb-2 float-right menu" id="CardX{{ $id }}" onmouseleave="hideMenu({{ $id }})">
+        @if(\Illuminate\Support\Facades\Auth::user()->role_id >= 2)
+            <a href="/events/{{ $id }}/edit">
+                <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Bewerk</li>
+            </a>
+
+            <a href="/events/{{ $id }}/delete">
+                <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Verwijder</li>
+            </a>
+        @endif
+        <a href="/events/{{ $id }}/details">
+            <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Details</li>
+        </a>
+    </ul>
 </div>
