@@ -33,5 +33,9 @@
         <a href="/events/{{ $id }}/details">
             <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Details</li>
         </a>
+
+        <a href="/events/{{ $id }}/join">
+            <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Inschrijven</li>
+        </a>
     </ul>
 </div>
