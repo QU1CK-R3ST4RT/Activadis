@@ -4,7 +4,7 @@
 
 <div class="h-[600px] mb-10 mt-10 shadow-transparent overflow-hidden">
     <div class="w-full">
-        @foreach (Event::all() as $e)
+        @foreach (Event::paginate(5, ['*'], 'page', 0); as $e)
             @component('components.single-activity')
                 @slot('color')
                     {{ $e->color }}
