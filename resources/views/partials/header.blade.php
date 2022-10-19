@@ -6,11 +6,11 @@
     </div>
     <div class="w-[20%]">
         <div class="pt-[5px] md:pt-0 flex items-center h-full float-right">
-            <div style='background-image: url({{ asset("images/def-profile.svg") }}); background-repeat: no-repeat; background-size: cover; float: right;' class="h-[33px] w-[33px] mr-[32px]" onmouseover="showMenu('UserMenu')"></div>
+            <div style='background-image: url({{ asset("images/def-profile.svg") }}); background-repeat: no-repeat; background-size: cover; float: right;' class="h-[33px] w-[33px] mr-[32px] cursor-pointer" onclick="toggleMenu('UserMenu')"></div>
         </div>
     </div>
 </div>
-<ul class="z-10 shadow-lg border border-gray-500 hidden float-right menu" id="UserMenu" onmouseover="showMenu('UserMenu')" onmouseleave="hideMenu('UserMenu')">
+<ul class="z-10 shadow-lg border border-gray-500 hidden float-right menu" id="UserMenu">
     <a href="#">
         <li class="px-3 py-2 shadow-md bg-white font-bold text-black hover:text-amber-500">Profiel</li>
     </a>

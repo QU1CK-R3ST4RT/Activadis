@@ -2,7 +2,7 @@
     use \App\Models\Event as Event
 @endphp
 
-<div class="overflow-y-scroll h-[650px]">
+<div class="h-[600px] mb-10 mt-10 shadow-transparent overflow-hidden">
     <div class="w-full">
         @foreach (Event::all() as $e)
             @component('components.single-activity')

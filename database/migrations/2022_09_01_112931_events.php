@@ -16,17 +16,17 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("user_id");
-            $table->text('name')->unique();
-            $table->text('location');
+            $table->String('name');
+            $table->String('location');
             $table->text('description');
             $table->text('necessities');
-            $table->text('color')->default("#FFFFFF");
+            $table->String('color')->nullable();
             $table->float('cost')->nullable()->default(150.00);
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
             $table->integer('max_participants')->nullable()->default(10);
             $table->boolean('has_food')->nullable()->default(0);
-            $table->text('image');
+            $table->String('image');
             $table->integer('min_people');
             $table->integer('max_people');
             $table->timestamps();
