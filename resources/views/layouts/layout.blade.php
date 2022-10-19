@@ -43,6 +43,7 @@
         <div class="max-w-full h-full mx-5 md:mx-0">
             <div class="grid grid-cols-1 mt-10 md:grid-cols-2">
                 <div>
+                    @include('partials.creation')
                     @include('partials.card-list')
                     @include('partials.pagination')
                 </div>

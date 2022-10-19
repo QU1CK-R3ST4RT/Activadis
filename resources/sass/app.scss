@@ -152,10 +152,10 @@ a {
 .btn-custom {
     background-color: #006EE6;
     color: white;
-    padding: 8px;
+    padding: 8px 14px;
     border-radius: 5px;
-    max-width: 100px;
-    width: 100%;
+    max-width: 400px;
+    min-width: 100px;
 }
 
 .btn-custom-disabled {
