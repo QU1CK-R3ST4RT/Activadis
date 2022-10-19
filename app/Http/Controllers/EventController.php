@@ -47,12 +47,11 @@ class EventController extends Controller
             $newEvent->has_food = '0';
          }
 
-        $newEvent->cost = request('price');
-        $newEvent->min_people = request('minParticipant');
-        $newEvent->max_people = request('maxParticipants');
-        $newEvent->color = request('color');
-        $newEvent->necessities = request('description');
-        $newEvent->image = '1';
+         $newEvent->cost = request('price');
+         $newEvent->min_people = request('minParticipant');
+         $newEvent->max_people = request('maxParticipants');
+         $newEvent->color = request('color');
+         $newEvent->image = request('image');
 
         $newEvent->save();
 
