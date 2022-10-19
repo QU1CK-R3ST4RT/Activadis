@@ -24,7 +24,6 @@ class EventFactory extends Factory
             'color' => fake()->hexColor(),
             'name' => fake()->name(),
             'description' => fake()->paragraph(),
-            'necessities' => fake()->word(),
             'location' => fake()->city(),
             'cost' => fake()->numberBetween(100, 5000),
             'has_food' => false,
