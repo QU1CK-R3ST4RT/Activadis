@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<div class="outer-container mt-10 mx-5">
+<div class="outer-container mx-5">
     <div class="main-container">
         <div class="card-banner" style="background: {{ $event->color ?? "" }} !important;"></div>
         <div class="table-list">
@@ -21,21 +21,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="datePicker"></label>
-                            <input type="date" name="date" class="textfields" value="{{$event->date ?? ""}}">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <label for="beginTime">Starting at</label>
-                            <input type="time" name="start_time" placeholder="" class="textfields" value="{{$event->start_time ?? ""}}">
+                            <input type="datetime-local" name="start_time" class="textfields" value="{{$event->start_time}}">
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>
                             <label for="endTime">Ending at</label>
-                            <input type="time" name="end_time" placeholder="" class="textfields" value="{{$event->end_time ?? ""}}">
+                            <input type="datetime-local" name="end_time" class="textfields" value="{{$event->end_time}}">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <textarea type="text" placeholder="Description" name="description" class="description-textfield" value="{{$event->description ?? ""}}"></textarea>
+                            <textarea type="text" placeholder="Description" name="description" class="description-textfield">{{$event->description ?? ""}}</textarea>
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +44,17 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="number" min="0" placeholder="Pricing" name="price" class="textfields" value="{{$event->price ?? ""}}">
+                            <p>Prijs</p>
+                            <input type="number" min="0" placeholder="Pricing" name="price" class="textfields" value="{{$event->cost ?? ""}}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Participants</p>
+                            <label for="minParticipant">Min</label>
+                            <input type="number" min="0" name="minParticipant" class="textfields input-number">
+                            <label for="maxParticipants">Max</label>
+                            <input type="number" min="0" name="maxParticipants" class="textfields input-number">
                         </td>
                     </tr>
                     <tr>
@@ -57,7 +65,13 @@
                     </tr>
                     <tr>
                         <td>
-                            <button type="submit" class="border border-gray-800 p-5"> verstuur</button>
+                            <label for="file">Plaatjes</label>
+                            <input type="file" name="file">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" class="btn-custom"> verstuur</button>
                         </td>
                     </tr>
                 </table>
