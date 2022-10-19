@@ -1,5 +1,6 @@
 <div class="pagination-box mr-10 ml-10">
-    <button class="btn-custom">Previous</button>
-    <p class="pagination-btn ">0 / 10</p>
-    <button class="btn-custom">Next</button>
+     @php
+        use App\Models\Event;
+        echo Event::paginate($perPage = 5, $columns = ['*'], $pageName = 'page');
+    @endphp
 </div>
