@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
             $table->boolean('has_food')->nullable()->default(0);
-            $table->String('image');
+            $table->String('image')->nullable();
             $table->integer('min_people');
             $table->integer('max_people');
             $table->timestamps();
