@@ -82,4 +82,12 @@ class UserController extends Controller {
         Auth::logout();
         return redirect('login');
     }
+
+    public function delete($id) {
+        $foundUser = User::all()->where('id', $id)->first();
+
+        if ($foundUser) {
+            $foundUser->delete();
+        }
+    }
 }

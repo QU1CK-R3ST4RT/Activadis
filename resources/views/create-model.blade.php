@@ -12,31 +12,31 @@
                     <tr>
                         <td>
                             <Label>Event naam</Label>
-                            <input type="text" placeholder="" name="name" class="textfields">
+                            <input type="text" placeholder="" name="name" class="textfields" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="Location">Locatie</label>
-                            <input type="text" placeholder="" name="location" class="textfields">
+                            <input type="text" placeholder="" name="location" class="textfields" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="beginTime">Begin</label>
-                            <input type="datetime-local" name="start_time" class="textfields">
+                            <input type="datetime-local" name="start_time" class="textfields" required>
                         </td>
                     </tr> 
                     <tr>
                         <td>
                             <label for="endTime">Eind</label>
-                            <input type="datetime-local" name="end_time" class="textfields">
+                            <input type="datetime-local" name="end_time" class="textfields" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="Description">Beschrijving</label>
-                            <textarea type="text" placeholder="" name="description" class="description-textfield"></textarea>
+                            <textarea type="text" placeholder="" name="description" class="description-textfield" required></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -49,26 +49,26 @@
                     <tr>
                         <td>
                             <p>Prijs</p>
-                            <input type="number" min="0" placeholder="Pricing" name="price" class="textfields">
+                            <input type="number" min="0" placeholder="Pricing" name="price" class="textfields" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>Deelnemers</p>
                             <label for="minParticipant">Min</label>
-                            <input type="number" min="0" name="minParticipant" class="textfields input-number mb-2">
+                            <input type="number" min="0" name="minParticipant" class="textfields input-number mb-2" required> 
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="maxParticipants">Max</label>
-                            <input type="number" min="0" name="maxParticipants" class="textfields input-number mb-2">
+                            <input type="number" min="0" name="maxParticipants" class="textfields input-number mb-2" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="colorPicker">Card color</label>
-                            <input type="color" name="color" class="textfields">
+                            <input type="color" name="color" class="textfields" required>
                         </td>
                     </tr>
                     <tr>

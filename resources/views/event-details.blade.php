@@ -45,6 +45,7 @@
                         <p class="mb-2"><b>Prijs: </b>€{{$event->cost ?? ""}}</p>
                     </td>
                     <td>
+                        {{--this simply counts the amount of reservations made for current event--}}
                         @php
                             $count = 0;
                             foreach(\App\Models\Reservation::all()->where('event_id', $event->id) as $e) {
@@ -61,6 +62,7 @@
                         <p><b>Max: </b>{{ $event->max_people }}</p>
                     </td>
                     <td>
+                        {{--This if checks if thare is any reservations with current event_id and if one of them is made by the current user--}}
                         @if(\App\Models\Reservation::all()->where('event_id',$event->id)->where('user_id', \Illuminate\Support\Facades\Auth::user()->id)->first())
                             <a href="#" class="my-2">
                                 <button type="" disabled class="btn-custom-disabled">Inschrijven</button>
@@ -68,10 +70,12 @@
                             <a href="/events/{{ $event->id }}/leave">
                                 <button type="" class="btn-custom">Afmelden</button>
                             </a>
+                        {{--This if checks if the amount of reservations made on this event are equal to the maximum amount of reservations for current event--}}
                         @elseif(\App\Models\Reservation::all()->where('event_id',$event->id)->count() == $event->max_people)
                             <a href="#" class="my-2">
                                 <button type="" disabled class="btn-custom-disabled">Vol</button>
                             </a>
+                        {{--Anything other than that let them participate--}}
                         @else
                             <a href="/events/{{ $event->id }}/join">
                                 <button type="" class="btn-custom">Inschrijven</button>

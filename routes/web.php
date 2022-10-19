@@ -18,6 +18,8 @@ Route::group(['middleware' => 'LoggedIn'],function () {
     Route::get("/events/{event}/edit", [EventController::class, 'editing']);
     Route::post("/events/{event}/edit", [EventController::class, 'edit']);
 
+    Route::get("/users/{user}/delete", [UserController::class, 'delete']);
+
     Route::get("/events/{event}/delete", [EventController::class, 'delete']);
     Route::get("/events/{event}/join", [ReservationController::class, 'store']);
     Route::get("/events/{event}/leave", [ReservationController::class, 'delete']);
