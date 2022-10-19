@@ -19,12 +19,10 @@ return new class extends Migration
             $table->String('name');
             $table->String('location');
             $table->text('description');
-            $table->text('necessities');
             $table->String('color')->nullable();
             $table->float('cost')->nullable()->default(150.00);
             $table->timestamp('start_time')->nullable();
             $table->timestamp('end_time')->nullable();
-            $table->integer('max_participants')->nullable()->default(10);
             $table->boolean('has_food')->nullable()->default(0);
             $table->String('image');
             $table->integer('min_people');
