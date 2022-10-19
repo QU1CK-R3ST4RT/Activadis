@@ -23,7 +23,6 @@ return new class extends Migration
             $table->integer('event_points');
             $table->rememberToken();
             $table->timestamps();
-
             $table->foreign('role_id')->references('id')->on('roles');
         });
     }

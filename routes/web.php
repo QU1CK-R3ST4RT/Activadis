@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdministrationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
@@ -21,6 +22,8 @@ Route::group(['middleware' => 'LoggedIn'],function () {
     Route::get("/events/{event}/join", [ReservationController::class, 'store']);
     Route::get("/events/{event}/leave", [ReservationController::class, 'delete']);
     Route::get("/events/{event}/details", [EventController::class, 'details']);
+
+    Route::get("/crud", [AdministrationController::class, 'crud']);
 });
 
 Route::get("/logout", [UserController::class, 'logout']);

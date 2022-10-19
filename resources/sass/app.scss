@@ -91,6 +91,7 @@ $login-color: #04173e;
     margin-bottom: 15px;
     border: 1px solid $border-color;
     border-radius: 5px;
+    max-width: 200px
 };
 
 .login-input {
@@ -174,3 +175,27 @@ a {
 .input-number {
     width: 100px;
 }
+
+// Crud panel section
+.full-screen {
+    margin: 60px 20px 0px 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.crud-panel {
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px;
+}
+
+// .table {
+//     padding: 10px;
+//     col:first-child {background: #FF0}
+//     col:nth-child(2n+3) {background: #CCC}
+// }
