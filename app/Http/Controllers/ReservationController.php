@@ -28,28 +28,27 @@ class ReservationController extends Controller
 
         # Add new reservation to database:
         if($userExists && $eventExists) {
-
-            $foundReservation = Reservation::all()->where([
-                "event_id" => $event_id,
-                "user_id" => $currentUser->id
-            ])->first();
+            $foundReservation = Reservation::all()->where('event_id', $event_id)->where('user_id',$currentUser->id)->first();
 
             # Check if a reservation already exists:
-            $reservationExists = empty($foundReservation) == false;
-            if($reservationExists) {
-                return redirect("/events/".$event_id."/details");
-            }
-
+            $reservationLimit = Reservation::all()->where('event_id', $foundEvent->id)->count() == $foundEvent->max_people;
+            
             # Start adding a new reservation:
-            $newReservation = new Reservation();
-            $newReservation->user_id = $currentUser->id;
-            $newReservation->event_id = $event_id;
+            if (!$reservationLimit && $foundReservation == null) {
+                $newReservation = new Reservation();
+                $newReservation->user_id = $currentUser->id;
+                $newReservation->event_id = $event_id;
 
-            # Save the new reservation after having assigned the attributes:
-            $newReservation->save();
-            return redirect("/events/".$event_id."/details")->with([
-                'message' => "Successfully joined event."
-            ]);
+                # Save the new reservation after having assigned the attributes:
+                $newReservation->save();
+                return redirect("/events/" . $event_id . "/details")->with([
+                    'message' => "Successfully joined event."
+                ]);
+            } else {
+                return redirect("/events/" . $event_id . "/details")->with([
+                    'message' => "You are already taking part in this event"
+                ]);
+            }
         } else {
             if (!$userExists) {
                 return redirect("/login");
