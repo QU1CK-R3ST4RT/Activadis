@@ -26,7 +26,7 @@
                             <label for="beginTime">Begin</label>
                             <input type="datetime-local" name="start_time" class="textfields" value="{{$event->start_time}}">
                         </td>
-                    </tr>
+                    </tr> 
                     <tr>
                         <td>
                             <label for="endTime">Eind</label>
@@ -62,7 +62,7 @@
                     <tr>
                         <td>
                             <label for="maxParticipants">Max</label>
-                            <input type="number" min="0" name="maxParticipants" class="textfields input-number  mb-2" value="{{$event->max_people ?? 0}}">
+                            <input type="number" min="0" name="maxParticipants" class="textfields input-number mb-2" value="{{$event->max_people ?? 0}}">
                         </td>
                     </tr>
                     <tr>
